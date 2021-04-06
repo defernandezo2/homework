@@ -5,28 +5,18 @@ import io.cucumber.java.After;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.junit.Before;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.util.Random;
 
-public class LoginTest {
+public class LoginTest extends BaseTest {
 
-    private final WebDriver driver = new ChromeDriver();
     private LoginPage loginPage;
     Random rd = new Random();
 
-
-    @Before
-    public void setup() {
-    }
-
-
     @Given("a Höffner login page")
     public void a_Höffner_login_page() {
+        setupDriver();
         loginPage = new LoginPage(driver);
-
     }
 
     @When("I open a page")
