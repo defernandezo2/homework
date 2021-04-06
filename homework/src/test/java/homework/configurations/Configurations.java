@@ -4,6 +4,9 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.util.Properties;
 
+/**
+ * This class is created to have some global configurations across the pages.
+ */
 public class Configurations {
     private static Configurations single_instance = null;
     private static Properties defaultProps = new Properties();

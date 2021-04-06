@@ -6,6 +6,9 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+/**
+ * Class representing the login page
+ */
 public class LoginPage extends BasePage {
 
     WebDriver driver;
@@ -15,6 +18,7 @@ public class LoginPage extends BasePage {
     private By emailTextField = By.name("email");
     private By confirmationMessage = By.className("footerNewsletter__confirmation");
     private By newsSellerSubscriptionContainer = By.className("footerNewsletter__container");
+    private By emailError = By.id("email-error");
 
     public LoginPage(WebDriver driverP) {
         driver = driverP;
@@ -51,6 +55,11 @@ public class LoginPage extends BasePage {
     public void verifyNewsSellerIsPresent() {
         WebDriverWait wait = new WebDriverWait(driver, 10);
         wait.until(ExpectedConditions.visibilityOfElementLocated(newsSellerSubscriptionContainer));
+    }
+
+    public void verifyEmailErrorMessageIsDisplayed() {
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(emailError));
     }
 
 
