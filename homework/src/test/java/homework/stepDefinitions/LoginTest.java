@@ -35,6 +35,7 @@ public class LoginTest extends BaseTest {
 
     @When("enter my email in the input field")
     public void enter_my_email_in_the_input_field() {
+        loginPage.enterEmail("Email" + rd.nextInt() + "@mail.com");
     }
 
     @When("I press Absenden button")
