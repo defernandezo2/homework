@@ -5,11 +5,16 @@ node {
         sh 'pwd'
     }
     stage('Build') {
-        echo 'Building....'
-        sh './gradlew cucumber'
+    echo 'Building....'
     }
     stage('Test') {
-        echo 'Testing....'
+       try{
+               echo 'Building....'
+               sh './gradlew cucumber'
+               }
+               catch( exception){
+               throw exception
+               }
     }
     stage('Deploy') {
         echo 'Deploying....'
