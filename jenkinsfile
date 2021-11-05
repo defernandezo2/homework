@@ -6,7 +6,7 @@ node {
     }
     stage('Build') {
         echo 'Building....'
-        sh 'gdl cucumber'
+        sh 'gradlew cucumber'
     }
     stage('Test') {
         echo 'Testing....'
