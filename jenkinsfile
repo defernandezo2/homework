@@ -1,6 +1,9 @@
 node {
     stage('SCM') {
 	echo 'Gathering code from version control'
+	git branch: 'main', url: 'https://github.com/defernandezo2/homework'
+        sh 'pwd'
+        sh 'gradle cucumber'
     }
     stage('Build') {
         echo 'Building....'
