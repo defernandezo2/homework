@@ -13,7 +13,7 @@ node {
                sh './gradlew cucumber'
                }
                catch( exception){
-               throw exception
+                unstable(message: "Test is unstable")
                }
     }
     stage('Deploy') {
