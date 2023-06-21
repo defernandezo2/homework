@@ -1,5 +1,7 @@
 package homework.stepDefinitions;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
+import org.openqa.selenium.Point;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -12,8 +14,10 @@ public abstract class BaseTest {
     protected WebDriver driver;
 
     public void setupDriver() {
-//        System.setProperty("webdriver.chrome.driver", "./src/test/resources/chromedriver.exe");
+        WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
+        driver.manage().window().setPosition(new Point(2000, 10)); // To 2nd monitor.
+        driver.manage().window().maximize();
     }
 
 }

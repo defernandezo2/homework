@@ -39,8 +39,6 @@ public class LoginTest extends BaseTest {
         loginPage.acceptCookies();
         byte[] screenshot = ((TakesScreenshot)driver).getScreenshotAs(OutputType.BYTES);
         myScenario.attach(screenshot, "image/png","loaded login page");  // Stick it in the report
-
-
     }
 
     @Then("I can see a newsletter subscription input")
